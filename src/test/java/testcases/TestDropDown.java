@@ -36,6 +36,8 @@ public class TestDropDown {
               for(WebElement value: values) {
            	System.out.println(value.getAttribute("lang"));}  
               Thread.sleep(2000);
-               driver.quit();
+               driver.close();
+                driver.quit();
+               
      }
 }
