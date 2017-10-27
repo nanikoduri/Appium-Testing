@@ -30,14 +30,45 @@ public class TestDropDown {
           
          Select select = new Select(dropdown);
           select.selectByValue("hi");
+        //----------------------------------------------------------------------------//    
+          System.out.println("...........Printing Languages......." );
            List<WebElement> values = driver.findElements(By.tagName("option"));
             System.out.println(values.size());
             
               for(WebElement value: values) {
-           	System.out.println(value.getAttribute("lang"));}  
-              Thread.sleep(2000);
+           	System.out.println(value.getAttribute("lang"));
+           	}
+              
+             //-----------------------------------------------------------------------// 
+             /* System.out.println("...........Printing Links......." );
+              
+              List<WebElement> links = driver.findElements(By.tagName("a"));
+              System.out.println(values.size());
+              
+                for(WebElement link: links) {
+             	System.out.println(link.getAttribute("href") + "-----" +link.getText());
+             	}
+              */
+              
+              //-----------------------------------------------------------------------//
+              /*List<WebElement> values1 = dropdown.findElements(By.tagName("option"));
+              System.out.println(values1.size());
+              for(WebElement value: values1) {
+                 	System.out.println(value.getAttribute("lang"));
+                 	} */
+              //.......................................................................//
+              System.out.println("...........Printing Links In Perticular Block......." );
+                WebElement block= driver.findElement(By.cssSelector(".other-projects"));
+                List<WebElement> links = block.findElements(By.tagName("a"));
+                 System.out.println(links.size());
+                 for(WebElement link: links) {
+                  	System.out.println(link.getAttribute("href") + "........"+link.getText());
+                  	}
+                //-----------------------------------------------------------------------// 
+                
+                Thread.sleep(2000);
                driver.close();
                 driver.quit();
                
      }
-}
+	}
